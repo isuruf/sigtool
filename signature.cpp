@@ -8,6 +8,8 @@
 #include "signature.h"
 #include "emit.h"
 
+namespace SigTool {
+
 CodeDirectory::CodeDirectory() noexcept {
     data.magic = CSMAGIC_CODEDIRECTORY;
     data.version = 0x020400;
@@ -169,3 +171,4 @@ void EntitlementsDER::emit(std::ostream &os) {
 size_t EntitlementsDER::length() {
     return entitlements.length() + 8;
 }
+};

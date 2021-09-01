@@ -5,6 +5,7 @@
 #include <string>
 #include <openssl/asn1.h>
 
+namespace SigTool {
 struct DERMap {
     DERMap();
 
@@ -22,6 +23,7 @@ private:
     };
 
     std::unique_ptr<ASN1_SEQUENCE_ANY, ASN1_SEQUENCE_ANY_Deleter> map;
+};
 };
 
 #endif // SIGTOOL_DER_HPP

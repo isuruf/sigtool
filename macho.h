@@ -9,6 +9,8 @@
 #include <iostream>
 #include "emit.h"
 
+namespace SigTool {
+
 enum {
     MH_EXECUTE = 0x2,
     MH_PRELOAD = 0x5,
@@ -109,6 +111,7 @@ struct NotAMachOFileException : public std::exception {
     uint32_t magic;
 
     explicit NotAMachOFileException(uint32_t magic) : magic{magic} {}
+};
 };
 
 #endif //SIGTOOL_MACHO_H

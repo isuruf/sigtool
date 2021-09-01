@@ -5,6 +5,8 @@
 
 #include "der.h"
 
+namespace SigTool {
+
 namespace {
     ASN1_TYPE *newType(int type, void *value) {
         ASN1_TYPE *t = ASN1_TYPE_new();
@@ -59,4 +61,5 @@ std::string DERMap::toDER() {
 
 void DERMap::setBoolean(const std::string &key, bool value) {
     addPair(newUtf8String(key), newBoolean(value));
+}
 }
