@@ -262,7 +262,7 @@ int Commands::codesign(const CodesignOptions &options, const std::string &filena
 
     for (const auto &macho : list.machos) {
         auto codeSignature = macho->getCodeSignatureLoadCommand();
-        if (!options.force && codeSignature) {
+        if (!options.force && codeSignature && (macho->header.flags | CS_LINKER_SIGNED)) {
             throw std::runtime_error{"file is already signed. pass -f to sign regardless."};
         }
         auto sb = signMachO(SignOptions{

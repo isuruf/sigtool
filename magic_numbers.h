@@ -5,6 +5,7 @@ namespace SigTool {
 
 enum {
     CS_ADHOC = 0x00000002,
+    CS_LINKER_SIGNED = 0x00020000,
 };
 
 enum {
